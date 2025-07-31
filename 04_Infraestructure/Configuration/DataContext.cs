@@ -14,6 +14,16 @@ public class DataContext
 
      public DataContext(IOptions<MongoDbSettings> settings)
      {
+          if (settings?.Value == null)
+            throw new ArgumentNullException(nameof(settings), "Configuração do MongoDB não fornecida.");
+
+          if (string.IsNullOrWhiteSpace(settings.Value.ConnectionString))
+            throw new ArgumentException("ConnectionString do MongoDB não está configurada.");
+          if (string.IsNullOrWhiteSpace(settings.Value.Database))
+            throw new ArgumentException("Database do MongoDB não está configurada.");
+          if (string.IsNullOrWhiteSpace(settings.Value.Collection))
+            throw new ArgumentException("Collection do MongoDB não está configurada.");
+
           var client = new MongoClient(settings.Value.ConnectionString);
           _database = client.GetDatabase(settings.Value.Database);
           

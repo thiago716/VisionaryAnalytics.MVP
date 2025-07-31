@@ -13,6 +13,13 @@ public static class MassTransitExtensions
           var rabbitUser = configuration["RabbitMq:User"] ?? "guest";
           var rabbitPass = configuration["RabbitMq:Password"] ?? "guest";
 
+          if (string.IsNullOrWhiteSpace(rabbitHost))
+            throw new ArgumentException("RabbitMq:Host não está configurado.");
+          if (string.IsNullOrWhiteSpace(rabbitUser))
+            throw new ArgumentException("RabbitMq:User não está configurado.");
+          if (string.IsNullOrWhiteSpace(rabbitPass))
+            throw new ArgumentException("RabbitMq:Password não está configurado.");
+            
           services.AddMassTransit(x =>
           {
                x.UsingRabbitMq((context, cfg) =>
