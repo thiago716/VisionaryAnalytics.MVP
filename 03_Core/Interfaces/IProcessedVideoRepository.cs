@@ -2,10 +2,18 @@ using Core.Entity;
 
 namespace Core.Interfaces;
 
-public interface IProcessedVideoRepository
+public interface IVideoRepository
 {
-     Task AddAsync(ProcessedVideo video);
-    Task UpdateAsync(ProcessedVideo video);
-    Task<ProcessedVideo> GetByIdAsync(int id);
-    Task<IEnumerable<ProcessedVideo>> GetAllAsync();
+    /// <summary>
+    /// Busca um vídeo da API externa via HTTP.
+    /// </summary>
+    Task<ProcessedVideo> ObterPorIdAsync(int id);
+    /// <summary>
+    /// Envia mensagem para fila para inclusão do vídeo.
+    /// </summary>
+    Task EnfileirarParaAdicionarAsync(ProcessedVideo video);
+      /// <summary>
+    /// Envia mensagem para fila para atualização do vídeo.
+    /// </summary>
+    Task EnfileirarParaAtualizarAsync(ProcessedVideo video);
 }
