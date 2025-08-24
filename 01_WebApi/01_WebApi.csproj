@@ -22,4 +22,8 @@
     <ProjectReference Include="..\04_Infraestructure\04_Infraestructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>

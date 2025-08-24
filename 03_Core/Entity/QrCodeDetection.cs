@@ -3,14 +3,11 @@ using Core.Entity.Base;
 
 namespace Core.Entity;
 
-public class QrCodeDetection: BaseEntity
+public class QrCodeDetection : BaseEntity
 {
-    public string Content { get; private set; }
-    public double TimestampSeconds { get; private set; }
+    public TimeSpan TimeSpan { get; set; }
+    public required string DataContent { get; set; }
+    public Guid VideoProcessId { get; set; }
 
-    public QrCodeDetection(string content, double timestampSeconds)
-    {
-        Content = content;
-        TimestampSeconds = timestampSeconds;
-    }
+    public virtual ProcessedVideo? VideoProcess { get; set; }
 }

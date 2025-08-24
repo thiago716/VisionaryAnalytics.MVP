@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Infraestructure", "04_In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_Shared", "05_Shared\05_Shared.csproj", "{DF8404F8-1EC7-4571-BC7E-57070D6FC560}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_QueueConsumer", "06_QueueConsumer\06_QueueConsumer.csproj", "{C7408AA0-BF55-4BDF-80CD-856592D9DAA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{DF8404F8-1EC7-4571-BC7E-57070D6FC560}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF8404F8-1EC7-4571-BC7E-57070D6FC560}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF8404F8-1EC7-4571-BC7E-57070D6FC560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7408AA0-BF55-4BDF-80CD-856592D9DAA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7408AA0-BF55-4BDF-80CD-856592D9DAA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7408AA0-BF55-4BDF-80CD-856592D9DAA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7408AA0-BF55-4BDF-80CD-856592D9DAA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
